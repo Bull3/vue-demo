@@ -1,0 +1,126 @@
+// 重写饿了么UI样式
+@import './element-ui.scss';
+// 顶部组件样式
+@import "./hs-top.scss";
+// 左侧菜单组件样式
+@import "./hs-menu.scss";
+// tab组件样式
+@import "./hs-tab.scss";
+// 列表1模板样式
+@import './list-one.scss';
+// 编辑1模板样式
+@import './edit-one.scss';
+// 工具栏样式
+@import './hs-toolBar.scss';
+// 弹框
+@import "./dialog.scss";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+#app {
+    height: 100%;
+    // font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+    font-family: "微软雅黑", Arial;
+    font-size: 14px;
+    color: #303030;
+    min-width: 1200px;
+}
+
+body {
+    background: $global_background;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.h100 {
+    height: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    display: block;
+}
+
+.mb-5 {
+    margin-bottom: 5px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.pd-lr-10 {
+    padding: 0 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.pd-20 {
+    padding: 20px;
+}
+
+
+/* 滚动条样式 */
+
+html::-webkit-scrollbar,
+div::-webkit-scrollbar,
+ul::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 4px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 4px;
+}
+
+html::-webkit-scrollbar-thumb,
+div::-webkit-scrollbar-thumb,
+ul::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+html::-webkit-scrollbar-track,
+div::-webkit-scrollbar-track,
+ul::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.input-max-w {
+    width: 100%!important;
+    max-width: 300px!important;
+}

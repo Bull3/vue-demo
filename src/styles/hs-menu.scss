@@ -1,0 +1,195 @@
+/*
+样式说明文档 如需修改复制 ctrl+c ctrl+f 即可定位
+更新日期             2019-10-12 
+Author              邪七
+
+--------------------beg
+---
+---
+---
+$menu_expand_width                menu展开宽度
+$menu_reduce_width                menu收缩宽度
+$zw_div_background                menu占位div背景色
+$zw_div_width                     menu左侧占位div宽度
+$menu_content_background          menu内容区域背景色
+$menu_content_expand_width        menu内容区域展开宽度
+$menu_content_reduce_width        menu内容区域收缩宽度
+$menu_content_item_height         menu 每一行的高度
+$menu_item_icon_size              menu 每一行一级 icon 的大小
+---
+---
+---
+--------------------end
+*/
+
+// menu展开/收缩宽度
+$menu_expand_width: 220px;
+$menu_reduce_width: 68px;
+// menu占位div背景色
+$zw_div_background: #435c7b;
+// menu左侧占位div宽度
+$zw_div_width:20px;
+// menu内容区域背景色
+$menu_content_background: #d6e2f2;
+// menu内容区域展开/收缩宽度
+$menu_content_reduce_width: 48px;
+$menu_content_expand_width: 200px;
+// menu 每一行的高度
+$menu_content_item_height:48px;
+// menu 每一行一级 icon 的大小
+$menu_item_icon_size: 24px;
+.hs-menu {
+    width: $menu_reduce_width;
+    transition: 0.5s all;
+    &.isCollapse {
+        width: $menu_expand_width;
+    }
+    // tab占位
+    .hr-div {
+        height: $tab_height;
+        background: $zw_div_background;
+        cursor: pointer;
+        line-height: $tab_height;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px 0 0 0;
+        font-size: 12px;
+        .svg-icon {
+            font-size: 12px;
+            transition: 0.5s all;
+            float: left;
+            margin-top: 5px;
+            margin-left: 4px;
+        }
+        &.isCollapse {
+            .svg-icon {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    // 左侧占位div
+    .zw-div {
+        width: $zw_div_width;
+        background: $zw_div_background;
+        height: calc(100% - #{$tab_height});
+        cursor: pointer;
+        color: #fff;
+        position: relative;
+        font-size: 12px;
+        .text {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: rotate(-90deg);
+        }
+    }
+    // 内容区域
+    .content {
+        width: $menu_content_reduce_width;
+        transition: 0.5s all;
+        &.isCollapse {
+            width: $menu_content_expand_width;
+        }
+        height: calc(100% - #{$tab_height});
+        background: $menu_content_background;
+    }
+}
+
+// 饿了么ui
+.el-menu--collapse {
+    width: 48px;
+}
+
+.el-menu-hs {
+    height: 100%;
+    border-right: 0;
+    background-color: $menu_content_background;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.menu-icon-div {
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.el-submenu__title i {
+    color: #3e5877!important;
+}
+
+.el-menu>.menuCount>.el-menu-item,
+.el-menu--collapse>.menuCount>.el-menu-item,
+.el-submenu__title {
+    height: $menu_content_item_height!important;
+    line-height: $menu_content_item_height - 2px!important;
+    color: #3e5877!important;
+    &.is-active {
+        background: #76a8ef;
+    }
+}
+
+.el-menu--collapse>.menuCount>.el-submenu>.el-submenu__title {
+    span {
+        display: none;
+    }
+}
+
+.el-submenu>.el-menu>.menuCount>.el-menu-item.sub {
+    background: transparent;
+    padding-right: 30px;
+    span {
+        display: inline-block;
+        height: 28px;
+        line-height: 28px;
+        width: 100%;
+        padding-left: 5px;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        position: relative;
+        left: -25px;
+        padding-left: 25px;
+        &:hover {
+            background: #f1f1f1;
+            border: 1px solid #ccc;
+        }
+    }
+    &.is-active {
+        span {
+            background: #f1f1f1;
+            border: 1px solid #ccc;
+        }
+    }
+}
+
+.el-submenu>.el-submenu__title>span {
+    padding-left: 5px;
+}
+
+.el-menu-hs>.menuCount>.el-submenu>.el-submenu__title>span {
+    padding-left: 0px;
+}
+
+.el-menu-hs>.menuCount>.el-submenu.is-active {
+    background: #76a8ef;
+}
+
+.el-menu-hs>.menuCount>.el-submenu>.el-submenu__title>.menu-icon-div,
+.el-menu-hs>.menuCount>.el-menu-item .menu-icon-div {
+    position: relative;
+    width: $menu_item_icon_size;
+    height: $menu_item_icon_size;
+    left: -8px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: $menu_item_icon_size + 2px;
+    background: $global_background;
+    color: #fff!important;
+}
+
+.el-menu-hs>.menuCount>.el-menu-item>span,
+.el-menu-hs>.menuCount>.el-submenu>.el-submenu__title>span {
+    position: relative;
+    left: -5px;
+}

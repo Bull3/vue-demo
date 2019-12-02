@@ -1,0 +1,120 @@
+/*
+样式说明文档 如需修改复制 ctrl+c ctrl+f 即可定位
+更新日期             2019-05-21 
+Author              邪七
+
+--------------------beg
+---
+---
+---
+$top_height         头部高度
+$top_background     头部背景色
+$top_txt_color      头部文本颜色(不包含icons颜色)
+$top_menu_width     头部左边菜单容器宽度
+$top_menu_fs        头部左边菜单icon大小
+$top_logo_ml        头部logo左外边距
+$top_logo_fs        头部logo字体大小
+$top_icon_cont_mr   头部icon容器右外边距
+$top_icon_fs        头部icon大小
+$top_icon_color     头部icon颜色
+$top_icon-mr        头部icon右外边距
+$top-el-cont_mr     头部元素容器右外边距
+$top_el_mr          头部元素右外边距
+$top_searchInput_w  头部搜索框宽度
+---
+---
+---
+--------------------end
+*/
+
+// --- 头部高度
+$top_height: 40px;
+// --- 头部背景色
+$top_background:#2e3a52;
+// --- 头部文本颜色(不包含icons颜色)
+$top_txt_color:#fff;
+// --- 头部左边菜单容器宽度
+$top_menu_width: 68px;
+// --- 头部左边菜单icon大小
+$top_menu_fs: 20px;
+// --- 头部logo左外边距
+$top_logo_ml: 0px;
+// --- 头部logo字体大小
+$top_logo_fs: 16px;
+// --- 头部icon容器右外边距
+$top_icon_cont_mr: 32px;
+// --- 头部icon大小
+$top_icon_fs: 16px;
+// --- 头部icon颜色
+$top_icon_color: #fff;
+// --- 头部icon右外边距
+$top_icon-mr: 24px;
+// --- 头部元素容器右外边距
+$top-el-cont_mr: 32px;
+// --- 头部元素右外边距
+$top_el_mr: 24px;
+// --- 头部搜索框宽度
+$top_searchInput_w: 145px;
+.HsTopCom {
+    height: $top_height;
+    line-height: $top_height;
+    // background: $top_background;
+    color: $top_txt_color;
+    user-select: none;
+    cursor: default;
+    .icon-color {
+        color: $top_icon-color
+    }
+    .top-menu {
+        width: $top_menu_width;
+        text-align: center;
+        font-size: $top_menu_fs;
+        span {
+            cursor: pointer;
+        }
+    }
+    .top-logo {
+        margin-left: $top_logo_ml;
+        font-size: $top_logo_fs;
+    }
+    .top-icon-cont {
+        margin-right: $top_icon_cont_mr;
+        .top-icon {
+            cursor: pointer;
+            color: $top_icon-color;
+            font-size: $top_icon_fs;
+            margin-right: $top_icon-mr;
+            &:first-child {
+                margin-right: 0;
+            }
+        }
+    }
+    .top-element-cont {
+        margin-right: $top-el-cont_mr;
+        .el-dropdown {
+            color: $top_txt_color;
+            font-size: 12px;
+        }
+        .el {
+            margin-right: $top_el_mr;
+            &:first-child {
+                margin-right: 0;
+            }
+        }
+        .search-input {
+            width: $top_searchInput_w;
+            .el-input__inner {
+                background: transparent;
+                color: $top_txt_color;
+                font-size: 12px;
+                height: 20px;
+                line-height: 20px;
+            }
+            .el-icon-search {
+                padding: 3px;
+                font-size: 12px;
+                cursor: pointer;
+            }
+        }
+    }
+}

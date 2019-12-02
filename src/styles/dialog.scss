@@ -1,0 +1,85 @@
+/*
+样式说明文档 如需修改复制 ctrl+c ctrl+f 即可定位
+更新日期             2019-10-14
+Author              邪七
+
+--------------------beg
+---
+---
+---
+$dialog_bgc                               背景色
+$dialog_box_mg                            内容区域外间距
+$dialog_box_bgc                           内容区域背景色
+$dialog_header_bgc                        头部背景色
+$dialog_header_Color                      头部文本色
+$dialog_body_padding                      body内边距
+$dialog_footer_padding                    footer内边距
+---
+---
+---
+--------------------end
+*/
+
+// 背景色
+$dialog_bgc:#d6e2f2;
+// 头部背景色 文本色
+$dialog_header_bgc: #2d3951;
+$dialog_header_Color:#fff;
+// 内容区域外间距 背景色
+$dialog_box_mg: 12px;
+$dialog_box_bgc:#fff;
+// body内边距
+$dialog_body_padding:36px 36px 64px;
+// footer内边距
+$dialog_footer_padding: 0px 36px 24px;
+// 弹框
+.dialog-min-w .el-dialog {
+    min-width: 400px;
+  }
+
+.no-mgtop {
+    .el-dialog__body{
+        padding-top: 0!important;
+    }
+}
+// 弹框1
+.dialog-one, .b-dialog {
+    .el-dialog {
+        background: $dialog_bgc;
+        padding-bottom: $dialog_box_mg;
+        // padding: 0 12px 12px;
+    }
+    // 头部
+    .el-dialog__header {
+        background: $dialog_header_bgc;
+        padding: 10px 16px 10px 20px;
+        .el-dialog__title {
+            color: $dialog_header_Color;
+            font-size: 16px;
+            .close-btn {
+                background: #c44f4e;
+                color: $dialog_header_bgc;
+                width: 32px;
+                text-align: center;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+    }
+    .el-dialog__body,
+    .el-dialog__footer {
+        margin: 0 $dialog_box_mg;
+        background: $dialog_box_bgc;
+    }
+    // 中部
+    .el-dialog__body {
+        padding: $dialog_body_padding;
+        .el-form-item {
+            margin-bottom: 12px;
+        }
+    }
+    // 底部
+    .el-dialog__footer {
+        padding: $dialog_footer_padding;
+    }
+}

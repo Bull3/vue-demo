@@ -1,0 +1,224 @@
+/*
+样式说明文档 如需修改复制 ctrl+c ctrl+f 即可定位
+更新日期             2019-10-14
+Author              邪七
+
+--------------------beg
+---
+---
+---
+$edit_paddingLR                             界面左右内边距
+$edit_paddingTB                             界面上下内边距
+$edit_header_mb                             头部下边距
+$edit_from_mb                               表单下边距
+$edit_collapse_oddBgc                       主体折叠展开 奇数行 背景色
+$edit_collapse_evenBgc                      主体折叠展开 偶数行 背景色
+$edit_from_group_title_height               表单分组 标题高度
+$edit_from_group_title_mb                   表单分组 标题离内容的下边距
+$edit_from_group_title_padding              表单分组 标题内边距
+$edit_from_group_title_borderRadius         表单分组 标题圆角
+---
+---
+---
+--------------------end
+*/
+
+// 界面内边距
+$edit_paddingLR: 10px;
+$edit_paddingTB: 22px;
+// 表单下边距
+$edit_from_mb:12px;
+// 头部下边距
+$edit_header_mb:20px;
+// 主体折叠展开 奇/偶 数行 背景色
+$edit_collapse_oddBgc: #fff;
+$edit_collapse_evenBgc :#e5e5e5;
+// 表单分组 标题 高度 离内容的下边距
+$edit_from_group_title_mb:22px;
+$edit_from_group_title_height:28px;
+$edit_from_group_title_padding:10px;
+$edit_from_group_title_borderRadius:5px;
+.edit-one {
+    padding: $edit_paddingTB $edit_paddingLR;
+    height: 100%;
+    overflow-x: hidden;
+    // 表单样式
+    .el-form-item--mini.el-form-item,
+    .el-form-item--small.el-form-item {
+        margin-bottom: $edit_from_mb;
+    }
+    .el-form-item--mini .el-form-item__content,
+    .el-form-item--mini .el-form-item__label {
+        font-size: 12px;
+    }
+}
+
+// 编辑界面头部
+.edit-one .e-o-h {
+    padding-right: $edit_paddingTB;
+    margin-bottom: $edit_header_mb;
+}
+
+// 边界界面主体区域
+.edit-one .e-o-m {
+    .el-collapse {
+        .el-collapse-item {
+            .el-collapse-item__header {
+                border-bottom: 0;
+                padding-left: $edit_paddingTB;
+                &.is-active {
+                    border-bottom: 1px solid #ddd;
+                }
+            }
+            .el-collapse-item__content {
+                padding: $edit_paddingLR $edit_paddingTB;
+            }
+            &:nth-child(even) {
+                .el-collapse-item__header,
+                .el-collapse-item__content {
+                    background: $edit_collapse_evenBgc;
+                }
+            }
+            &:nth-child(odd) {
+                .el-collapse-item__header,
+                .el-collapse-item__content {
+                    background: $edit_collapse_oddBgc;
+                }
+            }
+        }
+    }
+    // 表单容器
+    .form-box {
+        margin-top: 11px;
+        // 有分组的form
+        .form-group-title {
+            height: $edit_from_group_title_height - 2px;
+            border-bottom: 2px solid #999;
+            margin-bottom: $edit_from_group_title_mb - 1px;
+            span {
+                display: inline-block;
+                height: $edit_from_group_title_height - 2px;
+                line-height: $edit_from_group_title_height - 2px;
+                background: #999;
+                padding: 0 $edit_from_group_title_padding;
+                border-radius: $edit_from_group_title_borderRadius $edit_from_group_title_borderRadius 0 0;
+                font-size: 12px;
+                cursor: default;
+            }
+        }
+    }
+    .openTabMode {
+        .rongqi {
+            padding: 10px 20px;
+            border-radius: 5px;
+            &:nth-child(even) {
+                background: $edit_collapse_evenBgc;
+            }
+            &:nth-child(odd) {
+                background: $edit_collapse_oddBgc;
+            }
+        }
+    }
+}
+
+// 右侧悬浮
+.r-fiex {
+    position: fixed;
+    right: -116px;
+    top: calc(50% - 100px);
+    transition: .5s all;
+    font-size: 12px;
+    z-index: 999;
+    &.show-menu {
+        right: -6px;
+        .el-icon-d-arrow-right {
+            transform: rotate(0deg);
+        }
+    }
+    .r-f-l {
+        width: 20px;
+        height: 100px;
+        border-top: 8px solid transparent;
+        border-right: 20px solid #2e3a52;
+        border-bottom: 8px solid transparent;
+        position: absolute;
+        left: -20px;
+        top: calc(50% - 50px);
+        cursor: pointer;
+        i {
+            position: absolute;
+            font-size: 12px;
+            // 总宽=>20+6    icon=>16   (26-16)/2
+            left: 5px;
+            // 总高=>100-16  inco=>16   (84-16)/2
+            top: 34px;
+            transform: rotate(-180deg);
+            color: #fff;
+            transition: .3s all;
+        }
+    }
+    .r-f-r {
+        width: 120px;
+        background: #2e3a52;
+        position: relative;
+        border-radius: 5px 0 0 5px;
+        padding: 0 5px;
+        padding-top: 5px;
+        .nr {
+            background: #d6e2f2;
+            li {
+                height: 28px;
+                line-height: 28px;
+                padding: 0 10px;
+                .el-checkbox__label {
+                    font-size: 12px;
+                    color: #2e3a52!important;
+                }
+            }
+            .li-group {
+                border-top: 1px solid #606060;
+            }
+        }
+        .back-top {
+            color: #fff;
+            text-align: center;
+            height: 28px;
+            line-height: 28px;
+            cursor: pointer;
+        }
+    }
+}
+
+$itemMargin: 36px;
+.row-div {
+    .col-div {
+        float: left;
+        padding-left: $itemMargin / 2;
+        padding-right: $itemMargin / 2;
+    }
+    // 大屏
+    &.maxWidth {
+        .col-div {
+            width: 33.333%;
+        }
+    }
+    // 中等
+    &.defaultWidth {
+        .col-div {
+            width: 50%;
+        }
+    }
+    // 最小
+    &.minWidth {
+        .col-div {
+            width: 100%;
+        }
+    }
+}
+
+
+/*
+
+
+
+*/

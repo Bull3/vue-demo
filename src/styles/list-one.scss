@@ -1,0 +1,474 @@
+/*
+样式说明文档 如需修改复制 ctrl+c ctrl+f 即可定位
+更新日期             2019-10-15 
+Author              邪七
+
+--------------------beg
+---
+---
+---
+$listOne_padding                            内边距
+$listOne_header_height                      头部高度
+$listOne_header_padding                     头部内边距
+$listOne_header_bgc                         头部背景色
+$listOne_header_color                       头部字体颜色
+$listOne_header_mainIcon                    头部主icon大小
+$listOne_header_titleSize                   头部标题文字大小    
+$listOne_header_titleWeight                 头部标题文字粗细
+$listOne_header_title_ml                    头部标题文字和左边icon的间距
+$listOne_header_iconBoxWeight               头部右边icon容器的宽度        
+$listOne_header_iconBorderRadius            头部右边icon的边框圆角   
+$listOne_header_iconSize                    头部右边icon字体大小
+$listOne_header_iconMr                      头部右边icon之间的间距
+$listOne_header_iconBgc                     头部右边icon的背景色  
+$listOne_header_iconHoverBgc                头部右边icon的鼠标悬浮背景色 
+$listOne_header_iconActiveBgc               头部右边icon的激活背景色
+$listOne_header_dropDownPadding             头部右边dropDown的内边距(文字和边框的间距)
+$listOne_header_dropDownTextMargin          头部右边dropDown 内文字和icon的间距
+$listOne_header_dropDownMenuWidth           头部右边dropDown 弹框的宽度
+$listOne_header_dropDownMenuSize            头部右边dropDown 弹框的文字大小
+$listOne_header_dropDownMenuColor           头部右边dropDown 弹框的文字颜色
+$listOne_header_dropDownMenuPadiing         头部右边dropDown 弹框的内边距(文字和边框的间距)
+$listOne_header_dropDownMenuHeight          头部右边dropDown 弹框内每一行的高度
+$listOne_header_dropDownMenuHoverBgc        头部右边dropDown 弹框内每一行的悬浮背景色
+$listOne_searchBox_height                   搜索容器高度
+$listOne_searchBox_textSize                 搜索容器 左边文字大小
+$listOne_searchBox_enterOneWidth            搜索容器 下拉框1的宽度
+$listOne_searchBox_enterTwoWidth            搜索容器 下拉框2的宽度
+$listOne_searchBox_enterThreeWidth          搜索容器 下拉框3的宽度
+$listOne_searchBox_enterMr                  搜索容器 下拉框之间的间距 
+$listOne_treeBox_width                      树容器 宽度
+$listOne_treeBox_mr                         树容器 右外边距
+$listOne_treeBox_fontSize                   树容器 字体大小
+$listOne_treeBox_padding                    树容器 内边距
+$listOne_treeBox_borderRadius               树容器 圆角 
+$listOne_treeBox_bgc                        树容器 背景色 
+$listOne_treeBox_btnHeight                  树容器 头部按钮高度
+$listOne_treeBox_btnBorderRadius            树容器 头部按钮圆角
+$listOne_treeBox_btnPadding                 树容器 头部按钮内边距
+$listOne_treeBox_btnMr                      树容器 头部按钮右外边距
+$listOne_treeBox_btnMb                      树容器 头部按钮框离下边的间距
+$listOne_treeBox_btnHoverColor              树容器 头部按钮悬浮文字颜色
+$listOne_treeBox_btnHoverBgc                树容器 头部按钮悬浮背景色
+---
+---
+---
+--------------------end
+*/
+
+// 内边距
+$listOne_padding: 22px 10px;
+// 头部高度 内边距 背景色  字体颜色
+$listOne_header_height: 28px;
+$listOne_header_padding: 0 22px;
+$listOne_header_bgc:transparent;
+$listOne_header_color:#435c7b;
+// 头部主icon大小
+$listOne_header_mainIcon:24px;
+// 头部标题文字大小 文字粗细 和左边icon的间距
+$listOne_header_titleSize: 14px;
+$listOne_header_titleWeight:bold;
+$listOne_header_title_ml:20px;
+// 头部右边icon容器的宽度 边框圆角 背景色 鼠标悬浮背景色 激活背景色
+$listOne_header_iconSize: 14px;
+$listOne_header_iconBoxWeight: 30px;
+$listOne_header_iconBorderRadius:5px;
+$listOne_header_iconMr:10px;
+$listOne_header_iconBgc:transparent;
+$listOne_header_iconHoverBgc:#e3e5e8;
+$listOne_header_iconActiveBgc:#2e3a52;
+// 头部右边dropDown的内边距(文字和边框的间距)
+$listOne_header_dropDownPadding: 0 8px;
+// 头部右边dropDown 内文字和icon的间距
+$listOne_header_dropDownTextMargin: 0 10px 0 5px;
+// 头部右边dropDown 弹框的宽度 文字大小  内边距 每一行的高度
+$listOne_header_dropDownMenuWidth: 180px;
+$listOne_header_dropDownMenuSize:12px;
+$listOne_header_dropDownMenuColor:#606266;
+$listOne_header_dropDownMenuPadiing: 14px;
+$listOne_header_dropDownMenuHeight: 24px;
+$listOne_header_dropDownMenuHoverBgc:#c9c9c9;
+// 搜索容器高度 下拉框之间的间距 下拉框1的宽度 下拉框2的宽度 下拉框3的宽度
+$listOne_searchBox_height: 28px;
+$listOne_searchBox_textSize:12px;
+$listOne_searchBox_enterMr:10px;
+$listOne_searchBox_enterOneWidth:200px;
+$listOne_searchBox_enterTwoWidth:150px;
+$listOne_searchBox_enterThreeWidth:300px;
+// 树容器 宽度 右外间距 圆角 背景色 字体大小
+$listOne_treeBox_width:270px;
+$listOne_treeBox_mr:10px;
+$listOne_treeBox_borderRadius:3px;
+$listOne_treeBox_bgc:#f1f1f1;
+$listOne_treeBox_padding: 10px;
+$listOne_treeBox_fontSize:12px;
+// 树容器 头部按钮高度 圆角 悬浮文字颜色 背景色
+$listOne_treeBox_btnHeight:28px;
+$listOne_treeBox_btnBorderRadius:5px;
+$listOne_treeBox_btnPadding:0 11px;
+$listOne_treeBox_btnMr:10px;
+$listOne_treeBox_btnMb:10px;
+$listOne_treeBox_btnHoverColor:#fff;
+$listOne_treeBox_btnHoverBgc:#2e3a52;
+.list-one {
+    height: 100%;
+    padding: $listOne_padding;
+    background: #fff;
+}
+
+// listone 头部
+.list-one .l-o-h {
+    height: $listOne_header_height;
+    padding: $listOne_header_padding;
+    background: $listOne_header_bgc;
+    color: $listOne_header_color;
+    margin-bottom: 10px;
+    // 主icon
+    .main-icon {
+        margin-top: ($listOne_header_height - $listOne_header_mainIcon) / 2;
+        font-size: $listOne_header_mainIcon;
+    }
+    // 标题
+    .title {
+        display: inline-block;
+        height: $listOne_header_height;
+        line-height: $listOne_header_height;
+        font-size: $listOne_header_titleSize;
+        font-weight: $listOne_header_titleWeight;
+        margin-left: $listOne_header_title_ml;
+    }
+    // 右边icon容器
+    .right-icon-box {
+        user-select: none;
+        .right-icon,
+        .right-dropdown {
+            height: $listOne_header_height;
+            line-height: $listOne_header_height;
+            border-radius: $listOne_header_iconBorderRadius;
+            background: $listOne_header_iconBgc;
+            cursor: pointer;
+            &:hover {
+                background: $listOne_header_iconHoverBgc;
+            }
+            &.is-active {
+                background: $listOne_header_iconActiveBgc;
+                color: #fff;
+            }
+        }
+        // 单icon
+        .right-icon {
+            display: inline-block;
+            width: $listOne_header_iconBoxWeight;
+            text-align: center;
+            margin-right: $listOne_header_iconMr;
+            font-size: $listOne_header_iconSize;
+        }
+        // 下拉组
+        .right-dropdown {
+            color: $listOne_header_color;
+            padding: $listOne_header_dropDownPadding;
+            font-size: $listOne_header_dropDownMenuSize;
+            .el-dropdown-link {
+                outline: none;
+                // 左边菜单图标
+                .menu {
+                    .svg-icon {
+                        transition: 0.5s all;
+                        font-size: $listOne_header_iconSize;
+                    }
+                    &.dropdownIsShow {
+                        .svg-icon {
+                            transform: rotate(90deg);
+                        }
+                    }
+                }
+                // 文字
+                .text {
+                    margin: $listOne_header_dropDownTextMargin;
+                }
+            }
+        }
+    }
+}
+
+// 头部右边下拉框样式
+.l-o-h-m-dropdown {
+    .el-dropdown-menu__item {
+        width: $listOne_header_dropDownMenuWidth - $listOne_header_dropDownMenuPadiing * 2;
+        font-size: $listOne_header_dropDownMenuSize;
+        padding: 0 $listOne_header_dropDownMenuPadiing;
+        line-height: $listOne_header_dropDownMenuHeight;
+        .radius {
+            position: relative;
+            left: -2px;
+            margin-right: 10px;
+            opacity: 0;
+        }
+    }
+    .el-dropdown-menu__item.is-disabled {
+        color: $listOne_header_dropDownMenuColor;
+        font-size: 12px;
+    }
+    .el-dropdown-menu__item:focus {
+        .radius {
+            opacity: 1;
+        }
+    }
+    .el-dropdown-menu__item:focus,
+    .el-dropdown-menu__item:not(.is-disabled):hover {
+        background: transparent;
+        color: $listOne_header_dropDownMenuColor;
+    }
+    .el-dropdown-menu__item:not(.is-disabled):hover {
+        background: $listOne_header_dropDownMenuHoverBgc;
+    }
+}
+
+// list-one 弹框
+.list-one .l-o-dialog {
+    background: #fafafa;
+    padding: 12px 22px;
+    // 第一行搜索
+    .l-o-search {
+        .text {
+            width: 80px;
+            font-size: $listOne_searchBox_textSize;
+            display: inline-block;
+            &.small {
+                font-size: 14px;
+            }
+        }
+        // 右边容器
+        .search-box {
+            width: calc(100% - 80px);
+            display: inline-block;
+            position: relative;
+            .enter-one {
+                width: $listOne_searchBox_enterOneWidth;
+                margin-right: $listOne_searchBox_enterMr;
+            }
+            .enter-two {
+                width: $listOne_searchBox_enterTwoWidth;
+                margin-right: $listOne_searchBox_enterMr;
+            }
+            .enter-three {
+                width: $listOne_searchBox_enterThreeWidth;
+                margin-right: $listOne_searchBox_enterMr;
+            }
+            .btn {
+                display: inline-block;
+                width: $listOne_searchBox_height;
+                height: $listOne_searchBox_height;
+                line-height: $listOne_searchBox_height - 2px;
+                text-align: center;
+                border: 1px solid #DCDFE6;
+                border-radius: 3px;
+                background: #fff;
+                vertical-align: top;
+                cursor: pointer;
+                i.el-icon-d-arrow-right {
+                    transform: rotate(90deg);
+                    transition: .5s all;
+                }
+                &.is-expend {
+                    i.el-icon-d-arrow-right {
+                        transform: rotate(-90deg);
+                    }
+                }
+                &.small {
+                    width: $listOne_searchBox_height + 4px;
+                    height: $listOne_searchBox_height + 4px;
+                    line-height: $listOne_searchBox_height - 2px + 4px;
+                }
+            }
+            .one-btn {
+                margin-left: 10px;
+            }
+        }
+    }
+    // 弹框更多搜索
+    .search-more {
+        pointer-events: none;
+        position: absolute;
+        border: 1px solid #DCDFE6;
+        border-radius: 3px;
+        left: -6px;
+        top: -6px;
+        z-index: 999;
+        .zw-div {
+            height: 32px;
+            width: 100%;
+            background: transparent;
+            margin-bottom: 5px;
+            &.small {
+                height: 36px;
+            }
+        }
+        @function all-div-widht($mr) {
+            @return $listOne_searchBox_enterOneWidth+$mr+$listOne_searchBox_enterTwoWidth+$mr+$listOne_searchBox_enterThreeWidth+$mr+$listOne_searchBox_height+$mr;
+        }
+        .all-div {
+            background: #fafafa;
+            pointer-events: auto;
+            padding: 0 5px;
+            width: all-div-widht($listOne_searchBox_enterMr);
+            .el-dropdown {
+                cursor: pointer;
+                user-select: none;
+                .el-dropdown-link {
+                    outline: none;
+                }
+            }
+            &.small {
+                width: all-div-widht($listOne_searchBox_enterMr) + 4px;
+            }
+        }
+    }
+    // 过滤框
+    .l-o-filter {
+        height: 28px;
+        background: green;
+        ;
+        &.small {
+            height: 32px;
+        }
+    }
+}
+
+// list-one 内容部分
+.list-one .l-o-c {
+    // 没有显示搜索框和过滤框的时候
+    height: calc(100% - #{$listOne_header_height} - 10px);
+    // transition: .5s all;
+    // 显示搜索框 或者 过滤框的时候
+    &.show-one {
+        height: calc(100% - #{$listOne_header_height} - 10px - 28px - 24px);
+        &.small {
+            height: calc(100% - #{$listOne_header_height} - 10px - 28px - 24px - 4px);
+        }
+    }
+    &.show-All {
+        height: calc(100% - #{$listOne_header_height} - 10px - 28px - 10px - 28px - 24px);
+        &.small {
+            height: calc(100% - #{$listOne_header_height} - 10px - 28px - 10px - 28px - 24px - 8px);
+        }
+    }
+}
+
+// list-one 内容部分分页
+.list-one .l-o-c {
+    .el-pagination {
+        text-align: right;
+        padding: $listOne_header_padding;
+        .el-pagination__sizes,
+        .el-pagination__jump>.el-pagination__editor {
+            position: relative;
+            top: -1px;
+        }
+        span:not([class*=suffix]) {
+            font-size: 12px;
+            color: #606266;
+        }
+        &.is-background .el-pager li:not(.disabled).active {
+            background-color: #2e3a52;
+            color: #FFF!important;
+        }
+        &.is-background .el-pager li:not(.disabled):hover {
+            color: #2e3a52;
+        }
+    }
+}
+
+// list-one 内容部分-左边树
+.list-one .l-o-c .l-o-tree {
+    width: $listOne_treeBox_width;
+    margin-right: $listOne_treeBox_mr;
+    border-radius: $listOne_treeBox_borderRadius;
+    background: $listOne_treeBox_bgc;
+    padding: $listOne_treeBox_padding;
+    font-size: $listOne_treeBox_fontSize;
+    vertical-align: top;
+    display: inline-block;
+    overflow: auto;
+    overflow-x: hidden;
+    position: relative;
+    transition: .3s all;
+    // 头部
+    .l-o-t-h {
+        margin-bottom: $listOne_treeBox_btnMb;
+        user-select: none;
+        span {
+            display: inline-block;
+            height: $listOne_treeBox_btnHeight - 2px;
+            line-height: $listOne_treeBox_btnHeight - 2px;
+            border: 1px solid #ccc;
+            border-radius: $listOne_treeBox_btnBorderRadius;
+            padding: $listOne_treeBox_btnPadding;
+            margin-right: $listOne_treeBox_btnMr;
+            cursor: pointer;
+            &:last-child {
+                margin-right: 0;
+            }
+            &:hover {
+                color: $listOne_treeBox_btnHoverColor;
+                background: $listOne_treeBox_btnHoverBgc;
+            }
+        }
+    }
+    // 主体部分
+    .l-o-t-m {
+        padding: 0 10px;
+    }
+    // 悬浮小三角容器
+    .l-o-t-x {
+        height: 50px;
+        font-size: 16px;
+        position: absolute;
+        color: #c4b9b3;
+        right: 0;
+        top: calc(50% - 25px);
+        .x-one {
+            display: block;
+            margin-bottom: 4px;
+        }
+        span {
+            cursor: pointer;
+            &:hover {
+                color: #999;
+            }
+        }
+    }
+    // 左边树折叠的时候
+    &.treeIsFlod {
+        width: 10px;
+        .l-o-t-h,
+        .l-o-t-n {
+            display: none;
+        }
+    }
+    // 右边表格折叠时候
+    &.tableIsFlod {
+        width: 100%;
+    }
+}
+// list-one 内容部分-右边表格
+.list-one .l-o-c .l-o-table {
+    transition: .3s all;
+    &.show-tree {
+        width: calc(100% - #{$listOne_treeBox_width} - #{$listOne_treeBox_mr});
+        vertical-align: top;
+        display: inline-block;
+    }
+    // 左边树折叠的时候
+    &.treeIsFlod {
+        width: calc(100% - 20px - #{$listOne_treeBox_mr});
+    }
+    // 右边表格折叠时候
+    &.tableIsFlod {
+        width: 0;
+        .el-table,
+        .el-pagination {
+            display: none;
+        }
+    }
+}

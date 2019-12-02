@@ -1,0 +1,95 @@
+@import './global.scss';
+.el-table {
+    &::before {
+        height: 0;
+    }
+    .el-table__header {
+        thead {
+            th {
+                background: #fafafa;
+                // border-top: 1px solid #EBEEF5;
+            }
+        }
+    }
+    &.el-table--border {
+        border: 0;
+        &::after {
+            width: 0;
+        }
+    }
+    .el-checkbox__input.is-checked .el-checkbox__inner,
+    .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+        background-color: $global_background;
+        border-color: $global_background;
+    }
+    .el-checkbox__inner:hover {
+        border-color: $global_background;
+    }
+    .el-checkbox__input.is-focus {
+        .el-checkbox__inner {
+            border-color: $global_background;
+        }
+    }
+    .el-table__row {
+        .cell {
+            white-space: nowrap;
+        }
+    }
+    &.alb {
+        .el-table__row {
+            .cell {
+                white-space: normal;
+            }
+        }
+    }
+    &.el-table--border {
+        .el-table__header {
+            thead {
+                th {
+                    border-top: 0;
+                }
+            }
+        }
+    }
+}
+
+.el-table--border td,
+.el-table--border th,
+.el-table__body-wrapper .el-table--border.is-scrolling-left~.el-table__fixed {
+    border-right: 0;
+}
+
+.el-checkbox__input.is-focus .el-checkbox__inner {
+    border-color: $global_background;
+}
+
+.el-checkbox__inner:hover {
+    border-color: $global_background;
+}
+
+.el-checkbox__input.is-checked .el-checkbox__inner,
+.el-checkbox__input.is-indeterminate .el-checkbox__inner {
+    background-color: $global_background;
+    border-color: $global_background;
+}
+
+.custom-tree-node {
+    display: inline-block!important;
+    span {
+        margin-right: 10px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.el-form {
+    .el-form-item--mini.el-form-item,
+    .el-form-item--small.el-form-item {
+        margin-bottom: 12px;
+    }
+    .el-form-item--mini .el-form-item__content,
+    .el-form-item--mini .el-form-item__label {
+        font-size: 12px;
+    }
+}

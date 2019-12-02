@@ -1,0 +1,76 @@
+// 顶部组件样式
+@import "./global.scss";
+
+/*
+样式说明文档 如需修改复制 ctrl+c ctrl+f 即可定位
+更新日期             2019-10-12 
+Author              邪七
+
+--------------------beg
+---
+---
+---
+$tab_height              tab 高度
+$tab_padding             tab 内边距
+$tab_bgc                 tab 背景色         
+$tab_item_right_mrgiht   tab item 的间距
+$tab_item_padding        tab item 内文字与边框的间距
+$tab_item_bgc            tab item 背景色
+$tab_item_hoverBgc       tab item 鼠标悬浮背景色
+$tab_item_borderRadius   tab item 边框圆角
+$tab_text_mrgiht         tab 文字和 Icon 的间距
+$tab_text_color          tab 文字颜色
+$tab_text_size           tab 文字大小
+---
+---
+---
+--------------------end
+*/
+
+// tab 高度 内边距（文字和边框的间距）
+$tab_padding:6px;
+$tab_bgc:transparent;
+// tab item 的间距 内文字与边框的间距 背景色 边框圆角
+$tab_item_right_mrgiht: 2px;
+$tab_item_padding:0 10px;
+$tab_item_bgc:#829abc;
+$tab_item_hoverBgc: #d6e2f2;
+$tab_item_borderRadius: 5px;
+// tab 文字和 Icon 的间距
+$tab_text_mrgiht:0 5px;
+$tab_text_color: #fff;
+$tab_text_size:12px;
+.hs-tab {
+    height: $tab_height;
+    background: $tab_bgc;
+    padding:0 $tab_padding;
+    ul {
+        li {
+            float: left;
+            margin-right: $tab_item_right_mrgiht;
+            height: $tab_height;
+            line-height: $tab_height + 2;
+            padding: $tab_item_padding;
+            background: $tab_item_bgc;
+            border-radius: $tab_item_borderRadius $tab_item_borderRadius 0 0;
+            color: $tab_text_color;
+            user-select: none;
+            cursor: default;
+            &.active {
+                background: $tab_item_hoverBgc;
+                color: $main_color;
+                transition: .5s all;
+            }
+            .item {
+                margin: $tab_text_mrgiht;
+                font-size: $tab_text_size;
+            }
+            .close-icon {
+                &:hover {
+                    // color: #2e3a52;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

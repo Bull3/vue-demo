@@ -1,0 +1,152 @@
+/*
+样式说明文档 如需修改复制 ctrl+c ctrl+f 即可定位
+更新日期             2019-10-15 
+Author              邪七
+
+--------------------beg
+---
+---
+---
+$toolBar_height             栏高度
+$toolBar_fontSize           按钮字体大小
+$toolBar_btns_mr            按钮组之间的间距
+$toolBar_btn_mr             按钮之间的间距
+$toolBar_btn_height         按钮的高度
+$toolBar_btn_border         按钮的边框像素
+$toolBar_btn_borderStyle    按钮的边框样式 参考 https://www.w3school.com.cn/cssref/pr_border-style.asp
+$toolBar_btn_borderColor    按钮的边框颜色
+$toolBar_btn_borderRadius   按钮的边框圆角
+$toolBar_btn_padding        按钮内边距 文字和边框的间距
+$toolBar_btn_color          按钮 文字颜色
+$toolBar_btn_hoverColor     按钮 鼠标悬浮文字颜色
+$toolBar_btn_bgc            按钮 背景色
+$toolBar_btn_hoverBgc       按钮 鼠标悬浮背景色
+$toolBar_icon_box_mr        右边 icon 容器离右边的间距
+$toolBar_icon_mr            右边 icon 离右边的间距
+$toolBar_icon_bgc           右边 icon 背景色
+$toolBar_icon_activeBgc     右边 icon 激活背景色
+---
+---
+---
+--------------------end
+*/
+
+// 高度
+$toolBar_height: 56px;
+// 按钮字体大小
+$toolBar_fontSize: 12px;
+// 按钮组之间的间距
+$toolBar_btns_mr:10px;
+// 按钮之间的间距
+$toolBar_btn_mr:2px;
+// 按钮的高度
+$toolBar_btn_height:30px;
+// 按钮的边框 边框样式 边框颜色 边框圆角
+$toolBar_btn_border:1px;
+$toolBar_btn_borderStyle:solid;
+$toolBar_btn_borderColor:#ccc;
+$toolBar_btn_borderRadius:5px;
+// 按钮内边距 文字和边框的间距
+$toolBar_btn_padding:0 8px;
+// 按钮的文字颜色 和 悬浮时候的文字颜色
+$toolBar_btn_color:#2e3a52;
+$toolBar_btn_hoverColor:#2e3a52;
+// 按钮 背景色 和 按钮 鼠标悬浮背景色
+$toolBar_btn_bgc: transparent;
+$toolBar_btn_hoverBgc :#ecf5ff;
+// 右边 icon 容器离右边的间距 
+$toolBar_icon_box_mr :32px;
+// 右边 icon 离右边的间距 背景色 激活背景色
+$toolBar_icon_mr:2px;
+$toolBar_icon_bgc:#ccccca;
+$toolBar_icon_activeBgc:#2e3a52;
+.tool-bar {
+    height: $toolBar_height;
+    font-size: $toolBar_fontSize;
+    // padding-left: 12px;
+    // 按钮组
+    .btns {
+        display: inline-block;
+        margin-right: $toolBar_btns_mr;
+        // 距离顶部的高度等于 (总高度 - 按钮的高度 - 边框 * 2) / 2
+        margin-top: ($toolBar_height - $toolBar_btn_height - $toolBar_btn_border * 2) / 2;
+        .btn {
+            display: inline-block;
+            height: $toolBar_btn_height;
+            line-height: $toolBar_btn_height;
+            padding: $toolBar_btn_padding;
+            border: $toolBar_btn_border $toolBar_btn_borderStyle $toolBar_btn_borderColor;
+            cursor: pointer;
+            color: $toolBar_btn_color;
+            background: $toolBar_btn_bgc;
+            &:hover {
+                color: $toolBar_btn_hoverColor;
+                background: $toolBar_btn_hoverBgc;
+            }
+        }
+        // 没有分组的时候
+        .no-btns {
+            border-radius: $toolBar_btn_borderRadius!important;
+        }
+        .btn + .btn {
+            margin-left: $toolBar_btn_mr;
+
+        }
+
+        // 有分组的时候
+        .btn {
+            margin-left: $toolBar_btn_mr;
+            &:first-child {
+                border-radius: $toolBar_btn_borderRadius 0 0 $toolBar_btn_borderRadius;
+                margin-left: 0px;
+            }
+            &:last-child {
+                border-radius: 0 $toolBar_btn_borderRadius $toolBar_btn_borderRadius 0;
+            }
+        }
+
+        // .btn.has-btns {
+        //     margin-left: $toolBar_btn_mr;
+        //     &:first-child {
+        //         border-radius: $toolBar_btn_borderRadius 0 0 $toolBar_btn_borderRadius;
+        //         margin-left: 0px;
+        //     }
+        //     &:last-child {
+        //         border-radius: 0 $toolBar_btn_borderRadius $toolBar_btn_borderRadius 0;
+        //     }
+        // }
+    }
+    // 右边icon容器
+    .right-box {
+        float: right;
+        margin-right: $toolBar_icon_box_mr;
+        height: $toolBar_btn_height + $toolBar_btn_border * 2;
+        margin-top: ($toolBar_height - $toolBar_btn_height - $toolBar_btn_border * 2) / 2;
+        .show-layout,
+        .el-dropdown-link {
+            display: inline-block;
+            height: 100%;
+            line-height: $toolBar_btn_height + $toolBar_btn_border * 2;
+            padding: $toolBar_btn_padding;
+            background: $toolBar_icon_bgc;
+            margin-right: $toolBar_icon_mr;
+        }
+        .show-layout {
+            border-radius: $toolBar_btn_borderRadius 0 0 $toolBar_btn_borderRadius;
+        }
+        .el-dropdown-link {
+            border-radius: 0 $toolBar_btn_borderRadius $toolBar_btn_borderRadius 0;
+            cursor: pointer;
+            outline: none;
+            &.is-active {
+                background: $listOne_header_iconActiveBgc;
+                color: #fff;
+            }
+        }
+    }
+}
+
+// 下拉框
+.toolBar-dropdown {
+    @extend .l-o-h-m-dropdown;
+}
