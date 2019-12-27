@@ -30,10 +30,13 @@
         </el-tree>
       </el-col>
       <el-col :span="18" style="padding-left: 10px" class="h100">
-        <b-table :columns="columns" :data="tableData" :pagination="pagination" @selection-change="handleSelectionChange">
+        <b-table :columns="columns" :data="tableData" showPage :pageAttrs="pageAttrs" @page-change="paginationChange" @selection-change="handleSelectionChange">
           <template v-slot:rname="scope">
             <el-button type="text" @click="editClick(scope.row)">{{scope.row.rname}}</el-button>
           </template>
+          <!-- <template v-slot:pageSlot>
+            <el-button type="text" >分页插槽</el-button>
+          </template> -->
         </b-table>
 
         <!-- <el-pagination style="background-color: white;text-align: right;" @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage" :page-sizes="[10, 20, 30, 40]" :page-size="pageSize" layout="total, sizes, prev, pager, next, jumper" :total="total">
@@ -90,21 +93,16 @@ export default {
       },
       columns: [
         { id: "selection", type: "selection", width: "55" },
-        { id: "rname", label: "用户名称", colSlot: "rname" },
+        { id: "rname", label: "用户名称", slotName: "rname" },
         { id: "remark", prop: "remark", label: "用户说明" },
-        { id: "uname", prop: "uname", label: "用户账号" }
+        { id: "uname", prop: "uname", label: "用户账号" },
       ],
       tableData: [],
       selection: [],
-      pagination: {
-        attrs: {
-          // layout: "prev, pager, next, slot",
-          // currentPage: 2
-        },
-        listeners: {
-
-        },
-        refreshFun: this.search
+      pageAttrs: {
+        currentPage: 2,
+        pageSize: 20,
+        total: 0,
       }
     };
   },
@@ -175,6 +173,8 @@ export default {
       this.dialogVisible = true
     },
     search() {
+      this.pageAttrs.total = 138
+
       // service.get('/api/usrgp/page/{page}/{size}').then(res=>{
       //   console.log(res,121);
       // })
@@ -224,12 +224,27 @@ export default {
             "uname": "zs",
             "rname": "张三",
             "remark": "1221",
-            "code": ""
+            "code": "",
           }, {
             "uname": "ls",
             "rname": "李四",
             "remark": "31332",
-            "code": ""
+            "code": "",
+          }, {
+            "uname": "ls",
+            "rname": "李四",
+            "remark": "31332",
+            "code": "",
+          }, {
+            "uname": "ls",
+            "rname": "李四",
+            "remark": "31332",
+            "code": "",
+          }, {
+            "uname": "ls",
+            "rname": "李四",
+            "remark": "31332",
+            "code": "",
           }],
           "page": 1,
           "size": 10,
@@ -238,13 +253,19 @@ export default {
       }
       this.tableData = resData2.data.users;
     },
+    paginationChange(pageInfo, eventType) {
+      console.log(pageInfo, eventType);
+      this.pageAttrs.currentPage = pageInfo.currentPage
+      this.pageAttrs.pageSize = pageInfo.pageSize
+      this.pageAttrs.total = ~~(Math.random() * 100)
+    },
     handleSizeChange(pageSize) {
-      this.pageSize = pageSize
-      this.search()
+      // this.pageSize = pageSize
+      // this.search()
     },
     handleCurrentChange(currentPage) {
-      this.currentPage = currentPage
-      this.search()
+      // this.currentPage = currentPage
+      // this.search()
     },
   }
 };
@@ -253,5 +274,12 @@ export default {
 .big-btn {
   width: 100%;
   height: 37px;
+}
+</style>
+
+<style>
+.b-pagination {
+  background-color: white;
+  text-align: right;
 }
 </style>
