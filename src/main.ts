@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import ElementUI from 'element-ui'
+// import Test from 'bull3-first-pkg'
 // @ts-ignore
 import vGanttChart from 'v-gantt-chart'
 
@@ -10,6 +11,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 const locale = require('element-ui/lib/locale/lang/zh-CN').default;  // lang i18n
 Vue.use(ElementUI, { locale, size: 'mini' })
 Vue.use(vGanttChart)
+// Vue.use(Test)
 // 引入svg icon
 import '@/icons';
 // 引入scss
